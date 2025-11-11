@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://bqw0pxspvpm1p"]
+[gd_scene load_steps=5 format=3 uid="uid://bqw0pxspvpm1p"]
+
+[ext_resource type="PackedScene" uid="uid://don5uh8im1ii4" path="res://records.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cqbdl8chell4c" path="res://settings.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dena0yygngmp4" path="res://result.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://cph20gvyvrhhg" path="res://exit.gd" id="4_1bvp3"]
 
 [node name="main" type="Control"]
 layout_mode = 3
@@ -7,3 +12,40 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="records" parent="." instance=ExtResource("1_0xm2m")]
+layout_mode = 1
+
+[node name="settings" parent="." instance=ExtResource("2_h2yge")]
+layout_mode = 1
+
+[node name="result" parent="." instance=ExtResource("3_h2yge")]
+layout_mode = 1
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -77.0
+offset_right = 108.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "終了"
+script = ExtResource("4_1bvp3")
+
+[node name="convert_on" type="CheckButton" parent="."]
+layout_mode = 0
+offset_right = 44.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 50
+text = "変換あり"
+
+[node name="convert_off" type="CheckButton" parent="."]
+layout_mode = 0
+offset_top = 76.0
+offset_right = 228.0
+offset_bottom = 153.0
+theme_override_font_sizes/font_size = 50
+text = "変換なし
+"
