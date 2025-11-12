@@ -22,30 +22,44 @@ layout_mode = 1
 [node name="result" parent="." instance=ExtResource("3_h2yge")]
 layout_mode = 1
 
-[node name="exit" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -77.0
-offset_right = 108.0
-grow_vertical = 0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="left" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="convert_on" type="CheckBox" parent="HBoxContainer/left"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "変換あり"
+
+[node name="convert_off" type="CheckBox" parent="HBoxContainer/left"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+button_pressed = true
+text = "変換なし"
+
+[node name="layout_button" type="OptionButton" parent="HBoxContainer/left"]
+layout_mode = 2
+
+[node name="settings_button" type="Button" parent="HBoxContainer/left"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "設定"
+
+[node name="exit" type="Button" parent="HBoxContainer/left"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "終了"
 script = ExtResource("4_1bvp3")
 
-[node name="convert_on" type="CheckButton" parent="."]
-layout_mode = 0
-offset_right = 44.0
-offset_bottom = 24.0
-theme_override_font_sizes/font_size = 50
-text = "変換あり"
+[node name="right" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
 
-[node name="convert_off" type="CheckButton" parent="."]
-layout_mode = 0
-offset_top = 76.0
-offset_right = 228.0
-offset_bottom = 153.0
-theme_override_font_sizes/font_size = 50
-text = "変換なし
-"
+[node name="timer" type="HBoxContainer" parent="HBoxContainer/right"]
+layout_mode = 2
+
+[node name="typing" type="VBoxContainer" parent="HBoxContainer/right"]
+layout_mode = 2
